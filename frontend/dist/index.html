@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Hello World EOS</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="container">
+    <h1 class="text-center">A Dapp to create new account on EOS without Service</h1>
+    <h3 class="text-center">Please create an account on
+        <a href="http://jungle.cryptolions.io/#home">EOS Jungle Testnet</a> to use this Dapp</h3>
+
+    <button class="btn btn-default" type="submit" style="margin-top: 25px;" onclick="genarateOwnerKey()">Genarate Owner Key Pair</button>
+
+    <div class="input-group">
+        <input id="owner_pubkey" class="form-control" placeholder="Owner Public Key">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" data-clipboard-target="#owner_pubkey">copy</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <input id="owner_prvkey" class="form-control" placeholder="Owner Private Key">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" data-clipboard-target="#owner_prvkey">copy</button>
+        </div>
+    </div>
+
+    <button class="btn btn-default" type="submit" style="margin-top: 25px;" onclick="genarateActiveKey()">Genarate Acvite Key Pair</button>
+    <div class="input-group">
+        <input id="active_pubkey" class="form-control" placeholder="Active Public Key">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" data-clipboard-target="#active_pubkey">copy</button>
+        </div>
+    </div>
+    <div class="input-group">
+        <input id="active_prvkey" class="form-control" placeholder="Active Private Key">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" data-clipboard-target="#active_prvkey">copy</button>
+        </div>
+    </div>
+
+    <label for="eos_account" style="margin-top: 25px;">
+        <strong>Account Name must be 12 characters and contains following (12345abcdefghijklmnopqrstuvwxyz)</strong>
+    </label>
+    <div class="input-group">
+
+        <input id="eos_account" class="form-control" placeholder="EOS Account">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">Check Available</button>
+        </div>
+    </div>
+
+    <a class="btn btn-primary" style="margin-top: 25px;" href="#" onclick="createAccount()">Create Account</a>
+
+    <div class="form-group" style="margin-top: 25px;">
+        <div id="msg-success" class="alert alert-success"></div>
+    </div>
+    <div class="input-group">
+        <input id="msg-memo" class="form-control alert alert-success" role="alert" disabled>
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" data-clipboard-target="#msg-success"> copy</button>
+        </div>
+    </div>
+    <div class="form-group" style="margin-top: 25px;">
+        <div id="msg-warning" class="alert alert-warning"></div>
+    </div>
+
+    <div id="app"></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="bundle.js"></script>
+    <script src="clipboard.min.js"></script>
+    <script>
+        var clipboard = new ClipboardJS('.btn');
+    </script>
+
+</body>
+
+</html>
